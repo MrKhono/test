@@ -1,20 +1,214 @@
-<ion-header [translucent]="true">
+<ion-header mode="ios">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="dark">ACADEC</ion-button>
+    </ion-buttons>
+   
+    <ion-buttons routerLink="/notification"  slot="end">
+      <ion-icon name="notifications-outline" style="font-size: 25px;"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <app-first-modal *ngIf="showModal === 'modal1'"></app-first-modal>
+  <app-second-modal *ngIf="showModal === 'modal2'"></app-second-modal>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- <button (click)="openModal(modalTemplate)">Open modal</button> -->
+
+  <ng-template #modalTemplate>
+    <div>This is our custom modal content</div>
+  </ng-template>
+
+  <!-- <div *ngIf="currentModal" class="modal-container">
+    <div [ngSwitch]="currentModal" class="background">
+    
+      <app-first-modal *ngSwitchCase="'modal1'"></app-first-modal>
+      <app-second-modal  *ngSwitchCase="'modal2'"></app-second-modal>
+    </div>
+  </div> -->
+  
+  <!-- <app-first-modal></app-first-modal> -->
+  <!-- <div  class="background">
+    <div class="modal-info">
+      <p>Ceci est la liste des élèves et etudiants dont vous êtes le tuteur, la tutrice</p>
+    </div>
+    <div class="modal-overlay"></div>
+  </div>  -->
+  
+  <div class="frame"></div>
+
+  <div  class="card-profil-container" >
+    <ion-card class="card-profil" color="light" >
+      <ion-card-content>
+        <div class="img-card"></div>
+        <h2>Aïssatou Dia</h2>
+        <h4>Parent d'élève(s) et professeur</h4>
+      </ion-card-content>
+    </ion-card>
   </div>
+  
+
+  <div class="title">
+    <p>Élèves dont vous êtes le tuteur</p>
+  </div>
+  
+  <div  class="card-info" routerLink="/student-profil" >
+   <ion-card cls color="light" class="left-card" >
+      <ion-card-header class="card-info-header">
+        <div class="student-profil">
+            <div class="student-image"></div>
+        </div>
+      </ion-card-header>
+      <div class="student-info">
+        <p>Mouhamed Faye</p>
+        <a>Voir profil</a>
+      </div>
+    </ion-card>
+
+    <ion-card cls color="light" class="right-card">
+      <ion-card-header class="card-info-header">
+        <div class="student-profil">
+          <div class="student-image"></div>
+        </div>
+
+      </ion-card-header>
+      <div class="student-info">
+        <p>Mouhamed Faye</p>
+        <a>Voir profil</a>
+      </div>
+    </ion-card>
+
+    
+    <ion-card cls color="light" class="right-card">
+      <ion-card-header class="card-info-header">
+        <div class="student-profil">
+          <div class="student-image"></div>
+        </div>
+
+      </ion-card-header>
+      <div class="student-info">
+        <p>Mouhamed Faye</p>
+        <a>Voir profil</a>
+      </div>
+    </ion-card>
+
+    <ion-card cls color="light" class="right-card">
+      <ion-card-header class="card-info-header">
+        <div class="student-profil">
+          <div class="student-image"></div>
+        </div>
+
+      </ion-card-header>
+      <div class="student-info">
+        <p>Mouhamed Faye</p>
+        <a>Voir profil</a>
+      </div>
+    </ion-card>
+
+    <ion-card cls color="light" class="right-card">
+      <ion-card-header class="card-info-header">
+        <div class="student-profil">
+          <div class="student-image"></div>
+        </div>
+
+      </ion-card-header>
+      <div class="student-info">
+        <p>Mouhamed Faye</p>
+        <a>Voir profil</a>
+      </div>
+    </ion-card>
+
+    <ion-card cls color="light" class="right-card">
+      <ion-card-header class="card-info-header">
+        <div class="student-profil">
+          <div class="student-image"></div>
+        </div>
+
+      </ion-card-header>
+      <div class="student-info">
+        <p>Mouhamed Faye</p>
+        <a>Voir profil</a>
+      </div>
+    </ion-card>
+  </div>
+
+
+  <p class="title2">Vous enseignez à</p>
+
+  <div class="school-card-container">
+    <ion-card cls color="light" class="school-card">
+      <ion-card-content>
+        <ion-img src="assets/iam.png"></ion-img>
+        <div class="school-details">
+          <p>Ecole IAM</p>
+          <p>5 Classes</p>
+        </div>
+        <div class="line"></div>
+        <div class="notifications">
+          <p>12 Notifications</p>
+        </div>
+      </ion-card-content>  
+    </ion-card> 
+
+    <ion-card cls color="light" class="school-card second-card">
+      <ion-card-content >
+        <ion-img src="assets/iam.png"></ion-img>
+        <div class="school-details">
+          <p>Ecole IAM</p>
+          <p>5 Classes</p>
+        </div>
+        <div class="line"></div>
+        <div class="notifications">
+          <p>12 Notifications</p>
+        </div>
+      </ion-card-content>  
+    </ion-card> 
+    
+    
+  </div>
+
+  <p class="title2">Vous enseignez à</p>
+
+  <div class="school-card-container">
+    <ion-card cls color="light" class="school-card">
+      <ion-card-content>
+        <ion-img src="assets/iam.png"></ion-img>
+        <div class="school-details">
+          <p>Ecole IAM</p>
+          <p>5 Classes</p>
+        </div>
+        <div class="line"></div>
+        <div class="notifications">
+          <p>12 Notifications</p>
+        </div>
+      </ion-card-content>  
+    </ion-card> 
+
+    <ion-card cls color="light" class="school-card second-card">
+      <ion-card-content >
+        <ion-img src="assets/iam.png"></ion-img>
+        <div class="school-details">
+          <p>Ecole IAM</p>
+          <p>5 Classes</p>
+        </div>
+        <div class="line"></div>
+        <div class="notifications">
+          <p>12 Notifications</p>
+        </div>
+      </ion-card-content>  
+    </ion-card> 
+    
+    
+  </div>
+
+   
+
+  
 </ion-content>
+
+
+
+<div class="test">
+
+</div>

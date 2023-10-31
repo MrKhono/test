@@ -1,0 +1,22 @@
+<!-- <div  class="modal">
+  <div class="modal-content">
+    <h1>Modal 1</h1>
+  <p>Contenu du modal 1</p>
+  </div>
+</div> -->
+
+<div class="modal {{ size }}">
+  <div class="modal-header">
+    {{ title }}
+    <span class="modal-close" (click)="close()">✕</span>
+  </div>
+  <div class="modal-content">
+    <ng-content></ng-content>
+    Ceci est la liste des élèves dont vous êtes le tuteur
+  </div>
+  <div class="modal-footer">
+    <button (click)="submit()">Submit</button>
+  </div>
+</div>
+
+<div class="modal-backdrop" (click)="close()"></div>
