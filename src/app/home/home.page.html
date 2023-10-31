@@ -14,7 +14,7 @@
   <app-first-modal *ngIf="showModal === 'modal1'"></app-first-modal>
   <app-second-modal *ngIf="showModal === 'modal2'"></app-second-modal>
 
-  <!-- <button (click)="openModal(modalTemplate)">Open modal</button> -->
+  <button (click)="openModal(modalTemplate)">Open modal</button>
 
   <ng-template #modalTemplate>
     <div>This is our custom modal content</div>
